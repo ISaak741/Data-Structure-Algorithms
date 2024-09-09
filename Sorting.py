@@ -16,3 +16,24 @@ def merge_sort(arr):
                 j += 1
         return lst
     return merge(arr,0,len(arr)-1)
+
+
+
+# quick sort implementation
+
+def quick_sort(arr):
+    def quick(low,high):    
+        if low < high:
+            pivot = arr[low]
+            i, j = low, high
+            while i < j:
+                while i < high and arr[i] <= pivot:
+                    i += 1
+                while arr[j] > pivot:
+                    j -= 1
+                if i < j:
+                    arr[i], arr[j] = arr[j], arr[i]
+            arr[low], arr[j] = arr[j], arr[low]
+            quick(low,j)
+            quick(j+1,high)
+    quick(0,len(arr)-1)
