@@ -46,3 +46,16 @@ def insert_sort(arr):
         while j > 0 and arr[j] < arr[j-1]:
             arr[j], arr[j-1] = arr[j-1], arr[j]
             j -= 1
+
+
+
+# bubble sort
+def bubble_sort(arr):
+    n, swap = len(arr), True
+    while swap:
+        swap = False
+        for i in range(1,n):
+            if arr[i] < arr[i-1]:
+                arr[i], arr[i-1] = arr[i-1], arr[i]
+                swap = True
+        n -= 1
